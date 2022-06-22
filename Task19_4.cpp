@@ -2,12 +2,15 @@
 #include<fstream>
 int main()
 {
-    char sim[5];
+    char sim[4];
     std::ifstream img;
     img.open("imege.png",std::ios::binary);
     img.read(sim, sizeof(sim));
-    sim[4] = 0;
-    std::cout << sim << std::endl;
+ 
+    for (int i = 0; i < 4; i++)
+    {
+        std::cout << static_cast<int>(sim[i]) << endl;
+    }
 
     img.close();
 }
