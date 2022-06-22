@@ -9,7 +9,7 @@ int main()
  
     for (int i = 0; i < 4; i++)
     {
-        std::cout << static_cast<int>(sim[i]) << endl;
+        std::cout << static_cast<int>(sim[i]) << std::endl;
     }
 
     img.close();
