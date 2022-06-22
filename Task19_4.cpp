@@ -4,13 +4,20 @@ int main()
 {
     char sim[4];
     std::ifstream img;
-    img.open("imege.png",std::ios::binary);
-    img.read(sim, sizeof(sim));
- 
-    for (int i = 0; i < 4; i++)
+    img.open("Image.png",std::ios::binary);
+    if (img.is_open())
     {
-        std::cout << static_cast<int>(sim[i]) << std::endl;
+        img.read(sim, sizeof(sim));
+        if (sim[0] == -119 && sim[1] == 80 && sim[2] == 78 && sim[3] == 71)
+            std::cout << "OK" << std::endl;
+        else
+            std::cout << "NO" << std::endl;
     }
+    else
+    {
+        std::cout << "The file did not open" << std::endl;
+    }
+    
 
     img.close();
 }
