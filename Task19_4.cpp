@@ -8,7 +8,7 @@ int main()
     if (img.is_open())
     {
         img.read(sim, sizeof(sim));
-        if (sim[0] == -119 && sim[1] == 80 && sim[2] == 78 && sim[3] == 71)
+        if (sim[0] == -119 && sim[1] == 'P' && sim[2] == 'N' && sim[3] == 'G')
             std::cout << "OK" << std::endl;
         else
             std::cout << "NO" << std::endl;
